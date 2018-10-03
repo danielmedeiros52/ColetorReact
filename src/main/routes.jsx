@@ -10,10 +10,10 @@ export default props=>(
     <Router>
       <Layout>
           <Switch>
-              <Route path="/" exact={true} component={Menu} />
+                <Route path="/" exact={true} component={props => <Menu tela={'Transferência'} />}/>
               <Route path="1/11" component={Transferencia} />
-             <Route path='/1' render={props => <Transferencia extra={'Transferência de Endereçamento'} />}/>
-                // <Route path="*" component={Menu} />
+                <Route path='/1' component={props => <Transferencia tela={'Transferência de Endereçamento'} />}/>
+                // <Route path="*" omponent={props => <Menu tela={'Transferência'} />} />
          </Switch>
       </Layout>
     </Router>
