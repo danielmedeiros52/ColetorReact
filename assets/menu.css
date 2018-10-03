@@ -1,0 +1,185 @@
+
+body{
+    width:  3000px;
+
+}
+
+
+#conteiner-abas{
+    float: left;
+    width: 100%;
+
+}
+
+.aba {
+    position: relative;
+    width: 99%;
+    height: 100%;
+    float: left;
+    background: #13385c;
+    margin-top: 10px;
+    margin-right: 25px;
+    padding: 10px 1px 10px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    text-shadow: 0px -1px 0px rgba(30, 30, 30, 0.8);
+    -webkit-box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 1px 1px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 1px 1px rgba(50, 50, 50, 0.75);
+}
+.aba:hover{
+    background: #0c253e;
+    background-position: 13px 8px;
+}
+.aba > label{
+    width: 100%;
+    text-align: center;
+    color: #FFFFFF;
+    float: left;
+}
+.aba:nth-child(odd) {
+    background: #13385c;
+}
+.aba:nth-child(even) {
+    background: #0c253e;
+}
+
+#desabilitada{
+    background: #BEBEBE;
+}
+#desabilitada > label{
+    color: #000000;
+}
+
+#topo{
+    float: left;
+    width: 100%;
+    height: 45px;
+    background: #13385c;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+.icone-menu {
+    float: left;
+    margin-top: 9px;
+    margin-left: 5px;
+}
+
+.logo-gw{
+    float: left;
+    width: 50px;
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+.logo-cliente{
+    float: left;
+    width: 50px;
+    margin-top: 5px;
+    margin-left: 7px;
+}
+
+.icone-usuario{
+    float: right;
+    width: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+}
+
+#submenu{
+    float: left;
+    display: none;
+    margin-top: 21px;
+    margin-left: 16px;
+    width: 100px;
+    padding-left: 10px;
+    background: #0c253e;
+    color: #FFFFFF;
+    position: absolute;
+    z-index: 9999;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+
+#indicador {
+    float: right;
+    width: 20px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    background-color: red;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: -9px;
+    margin-right: -13px;
+}
+
+@media screen and (max-width: 340px) {
+    *{
+        margin:0;
+        padding: 0;
+    }
+    body {
+        overflow:none;
+        margin-left: 0px;
+        max-width: 300px;
+        max-height: 408px;
+        background-color:#B0C4DE;
+
+    }
+    .aba{
+        margin-left: 3px;
+        width: 95%;
+        left: 0px;
+    }
+    #topo{
+
+    width: 100%;
+
+}
+
+}
+
+@media screen and (max-width: 300px) {
+    body {
+        overflow:none;
+        max-width: 340px;
+        max-height: 412px;
+
+    }
+    .aba{
+        width: 90%;
+        left: 10px;
+    }
+}
+
+@media screen and (max-width: 240px) {
+    body {
+        overflow:none;
+        max-width: 340px;
+        max-height: 412px;
+
+    }
+    .aba{
+        width: 90%;
+        left: 10px;
+    }
+}
+@media screen and (max-width:2920px) {
+    body {
+        overflow:none;
+        max-width: 100%;
+        max-height: 812px;
+        background-color:#00000065;
+
+    }
+    .aba{
+        width: 90%;
+        left: 5%;
+    }
+}
