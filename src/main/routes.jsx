@@ -11,7 +11,7 @@ export default props=>(
       <Layout>
           <Switch>
                 <Route path="/" exact={true} component={props => <Menu tela={'Transferência'} />}/>
-              <Route path="1/11" component={Transferencia} />
+                <Route path="1/11" component={Transferencia} />
                 <Route path='/1' component={props => <Transferencia tela={'Transferência de Endereçamento'} />}/>
                 // <Route path="*" omponent={props => <Menu tela={'Transferência'} />} />
          </Switch>
