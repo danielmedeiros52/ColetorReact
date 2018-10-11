@@ -11,7 +11,7 @@ this.state= {pallet:{}, tela:this.props.tela}
 this.refresh()
 }
 refresh(){
-    fetch('http://localhost:8084/gweb-teixeira/ServicoColetorControlador?acao=buscarPallet&numPallet=10190')
+    fetch('http://localhost:8084/gweb-teixeira/ServicoColetorControlador?acao=buscarPallet&numPallet=184')
     .then(response => response.json())
     .then(resp => this.setState ({ ...this.state, pallet:resp}))
 }
@@ -19,8 +19,8 @@ render(){
    return (
       <div>
         <Header nomeTela={this.state.tela} />
-<Form/>
-<Topo pallet ={this.state.pallet} />
+        <Form/>
+        <Topo pallet ={this.state.pallet} />
 
 
       </div>

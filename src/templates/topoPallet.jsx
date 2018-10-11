@@ -1,40 +1,42 @@
 import React from 'react'
 
+const container = {
+backgroundColor:'#FFFFFF',
+margin:0,
+padding:0,
+}
+const title = {
+  fontWeight:'bold',
+
+}
+
+
+
+
 export default props=>(
-       <div style={"background:#FFFF"}>
-         {console.log(props.pallet)}
-          <div id="info-item">
-            Pallet: {props.pallet.pallet}
+  <div  style={container} id="info-item">
+    {console.log(props.pallet)}
+    <h5 style={title} align="center">Pallet Bipado</h5>
+    <h3 align="center" style={title}>
+    Pallet:  {props.pallet.pallet+' ' || ' ' }
+      Endereço: { props.pallet.enderecamento || '  Pallet não endereçado'}
+    </h3>
+       <div >
               <div id="cliente" className="campo-info">
-                  <label>{props.pallet.cliente} - {props.pallet.cnpj}</label>
+                  <label>Cliente: {props.pallet.cliente} - {props.pallet.cnpj}</label>
               </div>
               <div id="produto" className="campo-info">
-                <label>{props.pallet.produto}</label>
-                  <label>{props.pallet.codigo_barras}</label>
-
+                <label>Produto:{props.pallet.produto}</label>
+                {props.pallet.produto ?  <label> {'.  Cod:'+props.pallet.codigo_barras}</label> : ''}
               </div>
-              <div id="entrada" className="campo-info">
+              <div id="entrada" className="campo-info" >
                   <label>Quantidade: </label>
-                  <label>{props.pallet.quantidade_pallet} ,{props.pallet.sigla} </label>
-                  {props.pallet.tipo_item}
-              </div>
-              <div id="nota" className="campo-info">
-                  <label>Nota: </label>
-                  <label>{props.pallet.enderecamento}</label>
-              </div>
-              <div id="data" className="campo-info">
-                  <label>Data: </label>
-                  <label>{'data'}</label>
+                  <label>{props.pallet.quantidade_pallet} {props.pallet.sigla} </label>
               </div>
               <div id="tipo-mercadoria" className="campo-info">
                   <label>Tipo: </label>
-                  <label>{"Tipo"}</label>
+                  <label>{props.pallet.tipo_item}</label>
               </div>
-              <div id="norma-pallet" className="campo-info">
-                  <label>Palletização: </label>
-                  <label>{"A"} x {"itemEntrada.produto.alturaPalletizacao"}</label>
-             </div>
          </div>
     </div>
-
 )
