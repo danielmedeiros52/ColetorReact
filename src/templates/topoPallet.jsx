@@ -4,22 +4,19 @@ const container = {
 backgroundColor:'#FFFFFF',
 margin:0,
 padding:0,
+lineHeight: 0.5,
 }
 const title = {
   fontWeight:'bold',
 
 }
-
-
-
-
-export default props=>(
+const palletBipado = props =>(
   <div  style={container} id="info-item">
-    {console.log(props.pallet)}
     <h5 style={title} align="center">Pallet Bipado</h5>
-    <h3 align="center" style={title}>
-    Pallet:  {props.pallet.pallet+' ' || ' ' }
-      Endereço: { props.pallet.enderecamento || '  Pallet não endereçado'}
+    <h3 align="center" style={title,{color: !props.pallet.enderecamento ? 'red' :''}}>
+    Pallet:  {props.pallet.pallet || ' ' }
+    {'    '}
+      Endereço: { props.pallet.enderecamento || ' Pallet não endereçado! '}
     </h3>
        <div >
               <div id="cliente" className="campo-info">
@@ -39,4 +36,10 @@ export default props=>(
               </div>
          </div>
     </div>
+
+)
+export default props =>(
+  <div>
+{ props.pallet.pallet ? palletBipado(props):''}
+</div>
 )

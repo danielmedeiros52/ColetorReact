@@ -15,8 +15,12 @@ export default props => (
 <div style={container}>
 <div >
   <label style = {{marginLeft:'20px',marginRight:'20px',}}>Pallet Origem: </label>
-    <Input type='text' descricao='Pallet' />
-    
+
+  <Input type='text' descricao='Pallet'
+      value={props.numpallet}
+      onChange={props.handleChange}
+      onBlur={props.buscarPallet}
+      />
 </div>
 </div>
 

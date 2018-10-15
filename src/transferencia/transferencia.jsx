@@ -7,19 +7,37 @@ export default class Transferencia extends Component{
 // const pallets = props.
 constructor(props){
   super(props)
-this.state= {pallet:{}, tela:this.props.tela}
-this.refresh()
+this.state= {
+  numpallet:'',
+  pallet:{},
+  tela:this.props.tela
 }
-refresh(){
-    fetch('http://localhost:8084/gweb-teixeira/ServicoColetorControlador?acao=buscarPallet&numPallet=184')
+this.buscarPallet = this.buscarPallet.bind(this)
+this.handleChange = this.handleChange.bind(this)
+}
+buscarPallet(){
+    const numPallet = this.state.numpallet
+    fetch(`http://localhost:8084/gweb-teixeira/ServicoColetorControlador?acao=buscarPallet&numPallet=${numPallet}`)
     .then(response => response.json())
     .then(resp => this.setState ({ ...this.state, pallet:resp}))
 }
+
+handleChange(e){
+this.setState({...this.state , numpallet: e.target.value})
+}
+
+
 render(){
    return (
       <div>
         <Header nomeTela={this.state.tela} />
-        <Form/>
+
+        <Form buscarPallet={this.buscarPallet}
+          numPallet={this.state.numpallet}
+          handleChange={this.handleChange}
+
+          />
+
         <Topo pallet ={this.state.pallet} />
 
 
