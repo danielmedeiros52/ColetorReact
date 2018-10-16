@@ -41,5 +41,7 @@ const palletBipado = props =>(
 export default props =>(
   <div>
 { props.pallet.pallet ? palletBipado(props):''}
+
+
 </div>
 )
