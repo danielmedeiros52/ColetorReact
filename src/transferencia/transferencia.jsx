@@ -4,6 +4,7 @@ import Header from '../templates/pageHeader'
 import Form from './transfForm'
 import Topo from '../templates/topoPallet'
 import Historico from './transfHistorico'
+const URL ='http://localhost:8084/gweb-teixeira/ServicoColetorControlador'
 export default class Transferencia extends Component{
 // const pallets = props.
 constructor(props){
@@ -14,7 +15,6 @@ this.state= {
   pallet:{},
   listHistorico:[],
   tela:this.props.tela
-
 }
 this.buscarPallet = this.buscarPallet.bind(this)
 this.handleChange = this.handleChange.bind(this)
@@ -23,7 +23,6 @@ this.addHistorico = this.addHistorico.bind(this)
 }
 buscarPallet(){
     const numPallet = this.state.numpallet
-    const URL ='http://localhost:8084/gweb-teixeira/ServicoColetorControlador'
      fetch(`${URL}?acao=buscarPallet&numPallet=${numPallet}`)
     .then(response => response.json())
     .then(resp => this.setState ({ ...this.state, pallet:resp }))
@@ -56,7 +55,7 @@ render(){
           handleChange={this.handleChange}
           />
         <Topo pallet ={this.state.pallet} />
-        <Historico pallet= {this.state.pallet}   historico ={this.state.historico}/>
+        <Historico pallet= {this.state.pallet} listHistorico={this.state.listHistorico}  historico ={this.state.historico}/>
 
       </div>
       )
