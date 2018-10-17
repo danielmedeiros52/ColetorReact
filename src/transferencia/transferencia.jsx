@@ -4,6 +4,9 @@ import Header from '../templates/pageHeader'
 import Form from './transfForm'
 import Topo from '../templates/topoPallet'
 import Historico from './transfHistorico'
+import Destino  from './transfDestino'
+import IF from '../templates/if'
+
 const URL ='http://localhost:8084/gweb-teixeira/ServicoColetorControlador'
 export default class Transferencia extends Component{
 // const pallets = props.
@@ -55,9 +58,14 @@ render(){
           handleChange={this.handleChange}
           />
         <Topo pallet ={this.state.pallet} />
+        <div >
         <Historico pallet= {this.state.pallet} listHistorico={this.state.listHistorico}  historico ={this.state.historico}/>
+        </div>
+          <IF test = {this.state.historico}>
 
-      </div>
+          <Destino/>
+          </IF>
+    </div>
       )
     }
 }

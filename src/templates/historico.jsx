@@ -5,23 +5,23 @@ export default props =>{
   margin:'1px',
   padding:'0.5px',
   lineHeight: 0.5,
+  whiteSpace: 'nowrap',
   }
     const renderRows =()=>{
 
         return rows.map(hist=>(
             <div id="ticket-conferido"  style={container} className="ticket-conferido" key={hist.pallet}>
-                        <div className="campo-ticket">
-                        { console.log(hist)}
+                        <div className="campo-ticket" style={{marginRight:'500px'}}>
                             <label>Cliente: </label>
                             <label>{hist.cliente}</label>
                               <label>{hist.cnpj}</label>
                         </div>
 
-                        <div  className="campo-ticket">
+                        <div  className="campo-ticket"style={{marginRight:'500px'}}>
                               <label>Produto: </label>
                               <label>{hist.produto}</label>
                         </div>
-                        <div  style={{marginLeft:'150px'}} className="campo-ticket">
+                        <div  className="campo-ticket">
 
                               <label>Qtd: </label>
                               <label>{hist.quantidade_pallet}</label>
